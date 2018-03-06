@@ -43,7 +43,7 @@ public class CLinkedList<AnyType> {
 
     public boolean insertAfter(AnyType iData, AnyType newData) {
         if (isEmpty()) {
-            System.out.println("list empty !");
+            System.out.println("can not insertAfter(), empty list !");
         } else {
             Node<AnyType> temp = head;
 
@@ -71,13 +71,21 @@ public class CLinkedList<AnyType> {
 
     public void remove(AnyType rData) {
         if (head == null) {
-            System.out.println("empty list !");
+            System.out.println("can not remove, empty list !");
         } else {
             Node<AnyType> temp = head;
 
-            if (head.data.equals(rData)) {
+            // special case if there is only one element in the list, assign null
+            if (size == 1 && head.data.equals(rData)) {
+                head = null;
+                tail = null;
+
+                size--;
+            } else if (head.data.equals(rData)) {
                 head = head.nextNode;
                 tail.nextNode = head;
+
+                size--;
             } else {
 
                 for (int i = 0; i < size - 1; i++) {
@@ -87,10 +95,14 @@ public class CLinkedList<AnyType> {
                         }
                         temp.nextNode = temp.nextNode.nextNode;
 
+                        size--;
+                        break;
                     }
 
                     temp = temp.nextNode;
                 }
+
+                System.out.println("can not remove, item not found : " + rData);
             }
         }
     }
@@ -98,13 +110,15 @@ public class CLinkedList<AnyType> {
     public boolean isEmpty() {
         return head == null;
     }
-    
-    public void print(){
+
+    public void print() {
         Node<AnyType> temp = head;
-        
-        for (int i = 0; i <= size; i++) {
+
+        for (int i = 0; i < size; i++) {
             System.out.print(temp.data + " -> ");
             temp = temp.nextNode;
         }
+
+        System.out.println(isEmpty() ? "empty list !" : head.data);
     }
 }

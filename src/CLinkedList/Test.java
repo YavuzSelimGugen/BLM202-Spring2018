@@ -18,5 +18,17 @@ public class Test {
         cList.addFirst("node3");
         
         cList.print();
+        
+        cList.remove("node3");
+        cList.print();
+        
+        cList.remove("node2");
+        cList.print();
+        
+        cList.remove("node2");
+        cList.print();
+        
+        cList.remove("node1");
+        cList.print();
     }
 }
