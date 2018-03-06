@@ -96,7 +96,7 @@ public class CLinkedList<AnyType> {
                         temp.nextNode = temp.nextNode.nextNode;
 
                         size--;
-                        break;
+                        return;
                     }
 
                     temp = temp.nextNode;
