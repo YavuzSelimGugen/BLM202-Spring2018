@@ -31,6 +31,7 @@ public class DoublyLinkedList<MyType> {
         }
     }
 
+    // not included in the quiz
     public void addLast(MyType data) {
         DNode<MyType> newNode = new DNode<>(data);
 
