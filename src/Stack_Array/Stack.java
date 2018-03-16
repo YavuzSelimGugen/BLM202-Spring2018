@@ -21,7 +21,7 @@ public class Stack<T> {
 
     public void push(T data) {
         if (top == dataArray.length - 1) {
-            System.out.println("list is full !");
+            System.out.println("stack is full !");
         } else {
             // top++;
             dataArray[++top] = data;
@@ -30,7 +30,7 @@ public class Stack<T> {
 
     public T pop() {
         if (isEmpty()) {
-            System.out.println("list is empty !");
+            System.out.println("stack is empty !");
             return null;
         } else {
             //T temp = dataArray[top];
@@ -40,9 +40,18 @@ public class Stack<T> {
         }
     }
 
+    public int size() {
+        return top + 1;
+    }
+
     public void print() {
-        for (int i = 0; i <= top; i++) {
-            System.out.println(dataArray[i]);
+        if (isEmpty()) {
+            System.out.println("stack is empty !");
+        } else {
+            System.out.println("Stack elements are:");
+            for (int i = 0; i <= top; i++) {
+                System.out.println(dataArray[i]);
+            }
         }
     }
 
