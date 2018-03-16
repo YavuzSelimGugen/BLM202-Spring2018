@@ -8,7 +8,7 @@ package Quiz1;
 public class SinglyLinkedList<MyType> {
 
     SNode<MyType> head;
-    SNode<MyType> tail;
+    SNode<MyType> tail; // addLast metodunda her seferinde listeyi gezmemek için
 
     public void addLast(MyType data) {
         SNode<MyType> newNode = new SNode<>(data);
