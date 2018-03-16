@@ -11,7 +11,7 @@ package Stack_Array;
  */
 public class Demo extends javax.swing.JFrame {
 
-    Stack<Character> stack;
+    Stack<String> stack;
 
     /**
      * Creates new form Demo
@@ -77,16 +77,12 @@ public class Demo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextArea1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyTyped
-        char keyChar = evt.getKeyChar();
-
-        stack.push(keyChar);
+        stack.push(jTextArea1.getText());
     }//GEN-LAST:event_jTextArea1KeyTyped
 
     private void jButton_UndoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_UndoActionPerformed
-
         if (!stack.isEmpty()) {
-            Character popData = stack.pop();
-            jTextArea1.append(popData.toString());
+            jTextArea1.setText(stack.pop());
         }
     }//GEN-LAST:event_jButton_UndoActionPerformed
 
