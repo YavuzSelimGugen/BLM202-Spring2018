@@ -21,7 +21,7 @@ public class Stack<T> {
 
     public T pop() {
         if (isEmpty()) {
-            System.out.println("empty list !");
+            System.out.println("stack is empty !");
             return null;
         }
 
@@ -34,7 +34,7 @@ public class Stack<T> {
 
     public T peek() {
         if (isEmpty()) {
-            System.out.println("empty list !");
+            System.out.println("stack is empty !");
             return null;
         }
 
@@ -47,10 +47,11 @@ public class Stack<T> {
 
     public void print() {
         if (isEmpty()) {
-            System.out.println("empty list !");
+            System.out.println("stack is empty !");
         } else {
             Node<T> temp = head;
-
+            
+            System.out.println("Stack elements are:");
             while (temp != null) {
                 System.out.println(temp);
                 temp = temp.nextNode;

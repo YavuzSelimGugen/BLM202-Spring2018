@@ -19,5 +19,14 @@ public class Test {
         intStack.print();
         
         System.out.println("size : " + intStack.size());
+        
+        intStack.pop();
+        intStack.pop();
+        intStack.pop();
+        intStack.pop();
+        
+        intStack.print();
+        
+        System.out.println("size : " + intStack.size());    
     }
 }
