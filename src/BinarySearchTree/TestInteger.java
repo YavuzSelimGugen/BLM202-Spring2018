@@ -10,7 +10,6 @@ public class TestInteger {
     public static void main(String[] args) {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 
-        System.out.println(new Integer(10).compareTo(7));
         System.out.println("max : " + bst.findMaxRecursive());
 
         bst.insertRecursive(7);
@@ -23,11 +22,13 @@ public class TestInteger {
 
         bst.insertRecursive(15);
         bst.insertRecursive(12);
+        bst.insertRecursive(12);
 
         System.out.println("max : " + bst.findMaxRecursive());
         System.out.println("size : " + bst.sizeRecursive());
         System.out.println("full nodes : " + bst.findFullNodeCount());
 
         bst.preorder();
+        bst.postorder();
     }
 }

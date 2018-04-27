@@ -5,7 +5,7 @@ package BinarySearchTree;
  * @date Apr 27, 2018 , 2:06:48 PM
  * @author Muhammet Alkan
  */
-public class BinarySearchTree<T> {
+public class BinarySearchTree<T extends Comparable<T>> {
 
     private Node<T> root;
 
@@ -17,22 +17,17 @@ public class BinarySearchTree<T> {
         if (n == null) {
             n = new Node<>(newData);
         } else {
-            if (newData.hashCode() > n.data.hashCode()) {
+            if (newData.compareTo(n.data) > 0) {
                 n.rightChild = insertRecursive(n.rightChild, newData);
-            } else if (newData.hashCode() < n.data.hashCode()) {
+            } else if (newData.compareTo(n.data) < 0) {
                 n.leftChild = insertRecursive(n.leftChild, newData);
             }
-
-//            if (newData.toString().compareTo(n.data.toString()) > 0) {
-//                n.rightChild = insertRecursive(n.rightChild, newData);
-//            } else if (newData.toString().compareTo(n.data.toString()) < 0) {
-//                n.leftChild = insertRecursive(n.leftChild, newData);
-//            }
         }
 
         return n;
     }
 
+    // iterative insert, it compares objects by looking the hashCode value !!
     void insert(T newData) {
         Node<T> newNode = new Node<>(newData);
 

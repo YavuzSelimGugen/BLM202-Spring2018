@@ -9,14 +9,14 @@ public class TestString {
 
     public static void main(String[] args) {
         BinarySearchTree<String> bst = new BinarySearchTree<>();
-
-        bst.insert("d");
-        bst.insert("b");
-        bst.insert("a");
-        bst.insert("c");
-        bst.insert("k");
-        bst.insert("i");
-        bst.insert("u");
+        
+        bst.insertRecursive("Deri");
+        bst.insertRecursive("Ali");
+        bst.insertRecursive("Ahmet");
+        bst.insertRecursive("Mehmet");
+        bst.insertRecursive("Veli");
+        bst.insertRecursive("Ders");
+        bst.insertRecursive("Vefa");
 
         bst.preorder();
         bst.postorder();
